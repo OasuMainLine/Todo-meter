@@ -51,7 +51,7 @@ export default function TodoItem({id,title, testid, completed, onCompleteToggle,
     }
    
   return (
-    <li data-testid={testid} className="font-mono w-full p-4 bg-blue-300 rounded-md items-center flex" draggable={false} onDragEnd={onDragEnd} onDragOver={onDragOver} onDrop={onDropping} onDragStart={onDragStart}>
+    <li data-testid={testid} className="todo-element font-mono w-full p-4 bg-blue-300 rounded-md items-center flex" draggable={false} onDragEnd={onDragEnd} onDragOver={onDragOver} onDrop={onDropping} onDragStart={onDragStart}>
         <button name="dragButton" className="w-8 me-4 gripper" onMouseDown={onMouseOverGrip} >
         <svg fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
