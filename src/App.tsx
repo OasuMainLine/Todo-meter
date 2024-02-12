@@ -10,7 +10,6 @@ import React, {
 } from "react";
 import TodoItem, { Todo } from "./components/TodoItem";
 
-console.log("hello");
 enum Filter {
 	ALL = "All",
 	COMPLETED = "Completed",
@@ -158,7 +157,7 @@ function App() {
 	return (
 		<div className="w-full min-h-screen bg-slate-600 flex items-center flex-col gap-10">
 			<h1 className="font-mono font-bold text-4xl mt-28 text-white animated-text">
-				{"TODO'Meter".split("").map(char => <span>{char}</span>)}
+				{"TODO'Meter".split("").map((char, index) => <span key={char + index}>{char}</span>)}
 			</h1>
 
 			<div className="flex flex-col">
@@ -197,6 +196,7 @@ function App() {
 				) : (
 					filteredTodos.map((todo) => (
 						<TodoItem
+						 
 							onCompleteToggle={onCompleteToggle}
 							onDelete={onDelete}
 							onDragginEnd={onDragginEnd}

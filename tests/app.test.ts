@@ -8,8 +8,6 @@ test.beforeEach(async ({page}) => {
 })
 
 test.describe("Adding todos", () => {
- 
-
     test("Add todo by button", async ({page}) => {
             const todoInput = page.getByPlaceholder("WRITE SOMETHING")
             const button = page.getByText("Add");
@@ -73,8 +71,6 @@ test.describe("Adding todos", () => {
 })
 
 test.describe("Deleting / clearing todos", () => {
- 
-
     test("Deleting a single todo", async ({page}) => {
         await addTodo(page, todos[0])
         await expect(page.getByTestId("todo-test").locator("h3")).toHaveText(todos[0])
