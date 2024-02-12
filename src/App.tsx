@@ -177,6 +177,7 @@ function App() {
 					<button
 						ref={buttonRef}
 						onClick={onAddTodo}
+						name="addBtn"
 						className="p-2 bg-blue-800 font-mono text-white"
 					>
 						Add
@@ -185,6 +186,7 @@ function App() {
 				<button
 					onClick={addRandomTodos}
 					className="bg-pink-700 hover:bg-pink-600 transition-colors py-2 w-full mt-2 rounded-lg font-mono text-white"
+					id="randomBtn"
 				>
 					Random TODOS!
 				</button>
@@ -196,7 +198,6 @@ function App() {
 				) : (
 					filteredTodos.map((todo) => (
 						<TodoItem
-						 
 							onCompleteToggle={onCompleteToggle}
 							onDelete={onDelete}
 							onDragginEnd={onDragginEnd}
@@ -213,12 +214,14 @@ function App() {
 
 					<div className="font-mono flex text-gray-600 gap-5 ms-auto">
 						<button
+							name="all"
 							className={currentFilter == Filter.ALL ? activeFilterClass : ""}
 							onClick={() => onFilter(Filter.ALL)}
 						>
 							{Filter.ALL}
 						</button>
 						<button
+							name="completed"
 							className={
 								currentFilter == Filter.COMPLETED ? activeFilterClass : ""
 							}
@@ -227,7 +230,7 @@ function App() {
 							{Filter.COMPLETED}
 						</button>
 
-						<button className={currentFilter == Filter.PENDING ? activeFilterClass : ""} onClick={() => onFilter(Filter.PENDING)}>
+						<button name="pending" className={currentFilter == Filter.PENDING ? activeFilterClass : ""} onClick={() => onFilter(Filter.PENDING)}>
 							{Filter.PENDING}
 						</button>
 					</div>

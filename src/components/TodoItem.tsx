@@ -52,14 +52,14 @@ export default function TodoItem({id,title, testid, completed, onCompleteToggle,
    
   return (
     <li data-testid={testid} className="font-mono w-full p-4 bg-blue-300 rounded-md items-center flex" draggable={false} onDragEnd={onDragEnd} onDragOver={onDragOver} onDrop={onDropping} onDragStart={onDragStart}>
-        <button className="w-8 me-4 gripper" onMouseDown={onMouseOverGrip} >
+        <button name="dragButton" className="w-8 me-4 gripper" onMouseDown={onMouseOverGrip} >
         <svg fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
         </button>
         <input draggable={false} data-id={id} onChange={handleChange} checked={isCompleted} type="checkbox" name="complete" className='w-4 h-4 me-2'/>
         <h3 draggable={false} className={`text-xl ${completed ? "line-through" : ""}`}>{title}</h3>
-        <button draggable={false} onClick={handleClick} data-id={id} className='bg-red-300 p-2 rounded-md hover:bg-red-600 hover:text-white transition-all ease-in ms-auto'>Delete</button>
+        <button name="deleteButton" draggable={false} onClick={handleClick} data-id={id} className='bg-red-300 p-2 rounded-md hover:bg-red-600 hover:text-white transition-all ease-in ms-auto'>Delete</button>
     </li>
   )
 }
